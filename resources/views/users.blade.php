@@ -19,11 +19,11 @@
 							<!-- <p class="card-text">Text</p> -->
 
 							forma 1
-							<a href="https://jsonplaceholder.typicode.com/posts">ENVIAR GET</a>
+							<a href="/users">ENVIAR GET</a>
 
 							<br>
 							forma 2
-							<form action="https://jsonplaceholder.typicode.com/posts" method="get">
+							<form action="/users" method="get">
 								<button type="submit" class="btn btn-primary">Enviar</button>
 							</form>
 						</div>
@@ -36,18 +36,22 @@
 						<div class="card-body">
 							<h4 class="card-title">POST</h4>
 
-							
-							<form action="https://jsonplaceholder.typicode.com/posts" method="POST">
-								<input type="hidden" name="userId" value="1">
-
+							<form action="/users" method="POST">
+								
+								@csrf
 								<div class="mb-3">
-									<label for="" class="form-label">Title</label>
-									<input type="text" name="title" id="title" class="form-control" required>
+									<label for="" class="form-label">Nombre</label>
+									<input type="text" name="nombre" id="nombre" class="form-control" required>
 								</div>
 
 								<div class="mb-3">
-									<label for="" class="form-label">Body</label>
-									<input type="text" name="body" id="body" class="form-control" required>
+									<label for="" class="form-label">Correo</label>
+									<input type="text" name="correo" id="correo" class="form-control" required>
+								</div>
+
+								<div class="mb-3">
+									<label for="" class="form-label">Password</label>
+									<input type="text" name="password" id="password" class="form-control" required>
 								</div>
 
 								<div class="d-grid gap-2">
