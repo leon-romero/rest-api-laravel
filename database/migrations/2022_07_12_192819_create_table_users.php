@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
 
 class CreateTableUsers extends Migration
 {
@@ -20,6 +21,17 @@ class CreateTableUsers extends Migration
             $table->string('password');
             $table->timestamps();
         });
+
+
+        for ($i=0; $i < 1000; $i++) { 
+            $u = new User();
+            $u->name = "Benjamin";
+            $u->email = "benja.mora.torres".$i."@gmail.com";
+            $u->password = "12345";
+            $u->save();
+        }
+
+
     }
 
     /**
