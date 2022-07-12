@@ -17,16 +17,17 @@ class CreateTableUsers extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();
         });
 
+        $faker = Faker\Factory::create();
 
-        for ($i=0; $i < 1000; $i++) { 
+        for ($i=0; $i < 50; $i++) {
             $u = new User();
-            $u->name = "Benjamin";
-            $u->email = "benja.mora.torres".$i."@gmail.com";
+            $u->name = $faker->name();
+            $u->email = $i . $faker->email();
             $u->password = "12345";
             $u->save();
         }

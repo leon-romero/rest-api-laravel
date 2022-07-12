@@ -14,4 +14,6 @@ class User extends Authenticatable
 
 
     protected $table = 'users';
+
+
 }

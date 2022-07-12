@@ -41,7 +41,7 @@ class UserController extends Controller
             $user->email = $request->correo;
             $user->password = $request->password;
             $user->save();
-    
+
             return $user;
         } catch (\Throwable $th) {
             return response()->json(['message' => 'No se pudo crear'], 401);
@@ -63,14 +63,14 @@ class UserController extends Controller
         // }
 
         // return response()->json(['message' => 'Not Found!'], 404);
-    
+
         // try {
         //     return User::findOrFail($id);
         // } catch (\Throwable $th) {
         //     return response()->json(['message' => 'Not Found!'], 404);
         // }
 
-        
+
         try {
             $user =  User::findOrFail($id);
             return view('user.show' , compact('user'));
@@ -106,7 +106,7 @@ class UserController extends Controller
             $user->email = $request->correo;
             $user->password = $request->password;
             $user->update();
-    
+
             return $user;
         } catch (\Throwable $th) {
 
